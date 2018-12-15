@@ -264,6 +264,12 @@ let g:ale_fixers = {
 "leader key for prettier and ale
 nmap <leader>d <Plug>(ale_fix)
 
+" config add file
+" config status
+" config commit -m
+" config push
+" alias set up with bare git repo for .dotfiles
+
 "-------- experimenting-----------
 "
 "set autoread "detect when a file is changed

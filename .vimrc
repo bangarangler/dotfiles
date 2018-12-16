@@ -1,7 +1,22 @@
 "set termguicolors
 
+filetype plugin indent on
+filetype on
+
 "set paste toggle
 set pastetoggle=<Leader><Leader>p
+
+" move lines up or dowwn
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '>-2<CR>gv=gv
+
+"ma - mark a `a to return, mb = mark b `b to return
+":'a,'bs/C/S/c  changes all c's above to S
+
 
 "matchit.vim
 :filetype plugin on
@@ -115,6 +130,10 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+"augroup filetype javascript syntax=javascript
+"autocmd FileType javascript syntax clear jsFuncBlock jsFuncArgs
 
 
 "This is syntastic settings
@@ -146,7 +165,7 @@ Plug 'ervandew/supertab'
 Plug 'valloric/youcompleteme', { 'do': './install.py --ts-completer' }
 "Plug 'pangloss/vim-javascript'
 Plug 'sirver/ultisnips'
-Plug 'isruslan/vim-es6'
+"Plug 'isruslan/vim-es6'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -155,16 +174,16 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'honza/vim-snippets'
-Plug 'othree/html5.vim', { 'for': 'html'  }
-Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+"Plug 'othree/html5.vim', { 'for': 'html'  }
+"Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
+"Plug 'moll/vim-node', { 'for': 'javascript' }
+"Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+"Plug 'groenewege/vim-less', { 'for': 'less' }
+"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
-Plug 'stephenway/postcss.vim', { 'for': 'css' }
+"Plug 'stephenway/postcss.vim', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json'  }
 let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
@@ -357,7 +376,7 @@ let g:ale_completion_enabled = 1
 "let g:ale_javascript_prettier_use_local_config = 1
 "let g:ale_fix_on_save = 0
 
-filetype plugin indent on
+"syntax enable
 " make the highlighting of tabs and other non-text less annoying
 "highlight SpecialKey ctermfg=19 guifg=#333333
 "highlight NonText ctermfg=19 guifg=#333333

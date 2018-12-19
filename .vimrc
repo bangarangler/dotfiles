@@ -1,8 +1,6 @@
 "set termguicolors
-
 filetype plugin indent on
 filetype on
-
 "set paste toggle
 set pastetoggle=<Leader><Leader>p
 
@@ -85,7 +83,7 @@ set showmatch
 
 set wildmenu
 
-set cursorline
+"set cursorline
 
 set number
 
@@ -106,23 +104,23 @@ map <C-n> :NERDTreeToggle<CR>
 
 " better rainbow parentheses color options
 let g:rbpt_colorpairs = [
-    \ ['darkMagenta',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'seagreen3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkblue',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['darkMagenta',       'seagreen3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkcyan',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'darkcyan'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['lightmagenta',     'DarkOrchid3'],
-    \ ['lightcyan',         'darkmagenta'],
-    \ ]
+		\ ['darkMagenta',       'RoyalBlue3'],
+		\ ['Darkblue',    'SeaGreen3'],
+		\ ['darkgray',    'DarkOrchid3'],
+		\ ['darkgreen',   'seagreen3'],
+		\ ['darkcyan',    'RoyalBlue3'],
+		\ ['darkblue',     'SeaGreen3'],
+		\ ['darkmagenta', 'DarkOrchid3'],
+		\ ['darkMagenta',       'seagreen3'],
+		\ ['gray',        'RoyalBlue3'],
+		\ ['darkcyan',       'SeaGreen3'],
+		\ ['darkmagenta', 'DarkOrchid3'],
+		\ ['Darkblue',    'darkcyan'],
+		\ ['darkgreen',   'RoyalBlue3'],
+		\ ['darkcyan',    'SeaGreen3'],
+		\ ['lightmagenta',     'DarkOrchid3'],
+		\ ['lightcyan',         'darkmagenta'],
+		\ ]
 
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
@@ -150,6 +148,7 @@ let g:jsx_ext_required = 0
     "\ ]
 
 call plug#begin()
+"Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -174,22 +173,21 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'honza/vim-snippets'
-"Plug 'othree/html5.vim', { 'for': 'html'  }
+Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-"Plug 'moll/vim-node', { 'for': 'javascript' }
-"Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+"Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 "Plug 'groenewege/vim-less', { 'for': 'less' }
-"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
-"Plug 'stephenway/postcss.vim', { 'for': 'css' }
+Plug 'stephenway/postcss.vim', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json'  }
 let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 call plug#end()
-
 
  " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.

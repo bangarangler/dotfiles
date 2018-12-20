@@ -87,11 +87,12 @@ set wildmenu
 
 set number
 
-set tabstop=2
+"set tabstop=2
 
 set incsearch
 
 set hidden
+
 
 "NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
@@ -277,7 +278,8 @@ let g:ale_fixers = {
  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
  \   'javascript': ['eslint'],
  \}
-
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
 "leader key for prettier and ale
 nmap <leader>d <Plug>(ale_fix)
 
@@ -332,9 +334,9 @@ set showmatch " show matching braces
 
 set noexpandtab " insert tabs rather than spaces for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-""set tabstop=4 " the visible width of tabs
-""set softtabstop=4 " edit as if the tabs are 4 characters wide
-""set shiftwidth=4 " number of spaces to use for indent and unindent
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " edit as if the tabs are 4 characters wide
+set shiftwidth=4 " number of spaces to use for indent and unindent
 "set shiftround " round indent to a multiple of 'shiftwidth'
 
 
@@ -368,10 +370,10 @@ let g:ale_completion_enabled = 1
 
 
 "let g:ale_fixers = {}
-"let g:ale_fixers['javascript'] = ['prettier']
-"let g:ale_fixers['json'] = ['prettier']
-"let g:ale_fixers['css'] = ['prettier']
-"let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['json'] = ['prettier']
+let g:ale_fixers['css'] = ['prettier']
+let g:ale_javascript_prettier_use_local_config = 1
 "let g:ale_fix_on_save = 0
 
 "syntax enable

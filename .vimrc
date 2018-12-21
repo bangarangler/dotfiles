@@ -178,10 +178,10 @@ Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-"Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-"Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
+Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-"Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
 Plug 'stephenway/postcss.vim', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json'  }
@@ -381,8 +381,10 @@ let g:ale_javascript_prettier_use_local_config = 1
 "highlight SpecialKey ctermfg=19 guifg=#333333
 "highlight NonText ctermfg=19 guifg=#333333
 
-
+"set term=screen-256color
+":syntax on
 set nocompatible
-
-
-
+" hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
+" highlighting and reverts colors back to how they should be
+nnoremap <C-h> :syntax on <cr>
+nnoremap <C-v> :source ~/.vimrc <cr>

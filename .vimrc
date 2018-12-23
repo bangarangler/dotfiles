@@ -53,6 +53,7 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+
 let g:fzf_buffers_jump = 1
 nmap <Leader>b :buffers<CR>
 nmap <Leader>n :files<CR>
@@ -299,6 +300,8 @@ nmap <leader>d <Plug>(ale_fix)
 set ignorecase " case insensitive searching
 set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch " highlight search results
+"clear results after search
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 set incsearch " set incremental search, like modern browsers
 set nolazyredraw " don't redraw while executing macros
 

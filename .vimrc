@@ -14,6 +14,8 @@ vnoremap <C-k> :m '>-2<CR>gv=gv
 
 "ma - mark a `a to return, mb = mark b `b to return
 ":'a,'bs/C/S/c  changes all c's above to S
+" global search and replace with confirm y or n
+":%s/img/jpg/gc
 
 
 "matchit.vim
@@ -301,7 +303,7 @@ set ignorecase " case insensitive searching
 set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch " highlight search results
 "clear results after search
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nnoremap <silent> <C-L> :noh<CR><C-L>
 set incsearch " set incremental search, like modern browsers
 set nolazyredraw " don't redraw while executing macros
 

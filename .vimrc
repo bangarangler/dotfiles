@@ -346,11 +346,11 @@ set shiftwidth=4 " number of spaces to use for indent and unindent
 
 
 "" code folding settings
-"set foldmethod=syntax " fold based on indent
-"set foldlevelstart=99
-"set foldnestmax=10 " deepest fold is 10 levels
-"set nofoldenable " don't fold by default
-"set foldlevel=1
+set foldmethod=syntax " fold based on indent
+set foldlevelstart=99
+set foldnestmax=10 " deepest fold is 10 levels
+set nofoldenable " don't fold by default
+set foldlevel=1
 
 "  shortcut to save
  nmap <leader>w :w<cr>

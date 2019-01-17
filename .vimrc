@@ -191,6 +191,7 @@ Plug 'elzr/vim-json', { 'for': 'json'  }
 let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
  " Trigger configuration. Do not use <tab> if you use
@@ -339,9 +340,9 @@ set showmatch " show matching braces
 
 set noexpandtab " insert tabs rather than spaces for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " edit as if the tabs are 4 characters wide
-set shiftwidth=4 " number of spaces to use for indent and unindent
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " edit as if the tabs are 4 characters wide
+set shiftwidth=2 " number of spaces to use for indent and unindent
 "set shiftround " round indent to a multiple of 'shiftwidth'
 
 

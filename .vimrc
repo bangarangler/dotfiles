@@ -155,6 +155,7 @@ call plug#begin()
 "Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -177,14 +178,17 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'honza/vim-snippets'
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
 Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
+let g:jsx_ext_required = 0
+"Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+"Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
 Plug 'stephenway/postcss.vim', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json'  }
@@ -192,6 +196,10 @@ let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
+Plug 'valloric/matchtagalways'
+let g:mta_filetypes = {
+			\ 'javascript.jsx' : 1,
+			\}
 call plug#end()
 
  " Trigger configuration. Do not use <tab> if you use

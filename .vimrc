@@ -1,3 +1,54 @@
+call plug#begin()
+"Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'kabbamine/vcoolor.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'easymotion/vim-easymotion'
+Plug 'mattn/emmet-vim'
+"Plug 'scrooloose/syntastic'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ervandew/supertab'
+Plug 'valloric/youcompleteme', { 'do': './install.py --ts-completer' }
+"Plug 'pangloss/vim-javascript'
+Plug 'sirver/ultisnips'
+"Plug 'isruslan/vim-es6'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-surround'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-scripts/matchit.zip'
+Plug 'jiangmiao/auto-pairs'
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'honza/vim-snippets'
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
+Plug 'othree/html5.vim', { 'for': 'html'  }
+"Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+let g:jsx_ext_required = 0
+"Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+"Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'gko/vim-coloresque'
+Plug 'stephenway/postcss.vim', { 'for': 'css' }
+Plug 'elzr/vim-json', { 'for': 'json'  }
+let g:vim_json_syntax_conceal = 0
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sleuth'
+Plug 'valloric/matchtagalways'
+let g:mta_filetypes = {
+			\ 'javascript.jsx' : 1,
+			\}
+call plug#end()
+
 "set termguicolors
 filetype plugin indent on
 filetype on
@@ -54,7 +105,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
 
 let g:fzf_buffers_jump = 1
 nmap <Leader>b :buffers<CR>
@@ -126,6 +176,7 @@ let g:rbpt_colorpairs = [
 		\ ['lightcyan',         'darkmagenta'],
 		\ ]
 
+
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 au VimEnter * RainbowParenthesesToggle
@@ -151,59 +202,9 @@ let g:jsx_ext_required = 0
     "\ '<ion-icon> is not recognized!', 'discarding unexpected <ion-icon>', 'discarding unexpected </ion-icon>'
     "\ ]
 
-call plug#begin()
-"Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'kabbamine/vcoolor.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'easymotion/vim-easymotion'
-Plug 'mattn/emmet-vim'
-"Plug 'scrooloose/syntastic'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ervandew/supertab'
-Plug 'valloric/youcompleteme', { 'do': './install.py --ts-completer' }
-"Plug 'pangloss/vim-javascript'
-Plug 'sirver/ultisnips'
-"Plug 'isruslan/vim-es6'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-surround'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-scripts/matchit.zip'
-Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'honza/vim-snippets'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
-Plug 'othree/html5.vim', { 'for': 'html'  }
-"Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-let g:jsx_ext_required = 0
-"Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-"Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'gko/vim-coloresque'
-Plug 'stephenway/postcss.vim', { 'for': 'css' }
-Plug 'elzr/vim-json', { 'for': 'json'  }
-let g:vim_json_syntax_conceal = 0
-Plug 'sickill/vim-pasta'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sleuth'
-Plug 'valloric/matchtagalways'
-let g:mta_filetypes = {
-			\ 'javascript.jsx' : 1,
-			\}
-call plug#end()
-
  " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
+set runtimepath+=~/.vim/ultisnips_rep
 "set runtimepath+=~/.vim/mysnippets/UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -292,6 +293,8 @@ let g:ale_fixers = {
  \}
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+" set to 0 to disable fix files on save
+"let g:ale_fix_on_save = 0
 "leader key for prettier and ale
 nmap <leader>d <Plug>(ale_fix)
 
@@ -365,6 +368,8 @@ set foldlevel=1
  nmap <leader>w :w<cr>
 
  "edit ~/.vim
+ "
+ "
  map <leader>ev :e! ~/.vimrc<cr>
 
  " scroll the viewport faster

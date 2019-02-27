@@ -47,6 +47,7 @@ Plug 'valloric/matchtagalways'
 let g:mta_filetypes = {
 			\ 'javascript.jsx' : 1,
 			\}
+Plug 'pablopunk/dynamic-file-completion'
 call plug#end()
 
 "set termguicolors
@@ -135,6 +136,7 @@ let g:user_emmet_leader_key=','
 set showmatch
 
 set wildmenu
+set wildmode=longest:full,full
 
 "set cursorline
 
@@ -154,6 +156,7 @@ map <C-n> :NERDTreeToggle<CR>
 " Enable completion where available.
  " This setting must be set before ALE is loaded.
  let g:ale_completion_enabled = 1"
+ set wildmode=longest:full,full
 
 
 " better rainbow parentheses color options

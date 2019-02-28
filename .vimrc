@@ -47,7 +47,7 @@ Plug 'valloric/matchtagalways'
 let g:mta_filetypes = {
 			\ 'javascript.jsx' : 1,
 			\}
-Plug 'pablopunk/dynamic-file-completion'
+Plug 'pablopunk/dynamic-file-completion.vim'
 call plug#end()
 
 "set termguicolors

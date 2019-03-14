@@ -48,7 +48,20 @@ let g:mta_filetypes = {
 			\ 'javascript.jsx' : 1,
 			\}
 Plug 'pablopunk/dynamic-file-completion.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
+"map Ranger File Tree
+let g:ranger_map_keys = 0
+map <leader>r :Ranger<CR>
+"Ranger // open current file by default
+"RangerCurrentFile // Default Ranger behaviour
+"RangerCurrentDirectory
+"RangerWorkingDirectory
+
+"RangerNewTab
+"RangerCurrentFileNewTab
+"RangerCurrentDirectoryNewTab
+"RangerWorkingDirectoryNewTab
 
 "set termguicolors
 filetype plugin indent on

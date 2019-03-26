@@ -10,6 +10,108 @@ export ZSH="/Users/jonathanpalacio/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+
+# ORDER
+SPACESHIP_PROMPT_ORDER=(
+  time     #
+  vi_mode  # these sections will be
+  user     # before prompt char
+  host     #
+  char
+  dir
+  git
+  node
+  ruby
+  xcode
+  swift
+  golang
+  docker
+  venv
+  pyenv
+)
+SPACESHIP_VI_MODE_SHOW=false
+
+# USER
+SPACESHIP_USER_PREFIX="" # remove `with` before username
+SPACESHIP_USER_SUFFIX="" # remove space before host
+
+# HOST
+# Result will look like this:
+#   username@:(hostname)
+SPACESHIP_HOST_PREFIX="@:("
+SPACESHIP_HOST_SUFFIX=") "
+
+# DIR
+SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
+SPACESHIP_DIR_TRUNC='1' # show only last directory
+
+# GIT
+# Disable git symbol
+#SPACESHIP_GIT_SYMBOL="" # disable git prefix
+#SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
+# Wrap git in `git:(...)`
+#SPACESHIP_GIT_PREFIX='git:('
+#SPACESHIP_GIT_SUFFIX=") "
+#SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
+# Unwrap git status from `[...]`
+#SPACESHIP_GIT_STATUS_PREFIX=""
+#SPACESHIP_GIT_STATUS_SUFFIX=""
+
+## NODE
+#SPACESHIP_NODE_PREFIX="node:("
+#SPACESHIP_NODE_SUFFIX=") "
+#SPACESHIP_NODE_SYMBOL=""
+
+## RUBY
+#SPACESHIP_RUBY_PREFIX="ruby:("
+#SPACESHIP_RUBY_SUFFIX=") "
+#SPACESHIP_RUBY_SYMBOL=""
+
+## XCODE
+#SPACESHIP_XCODE_PREFIX="xcode:("
+#SPACESHIP_XCODE_SUFFIX=") "
+#SPACESHIP_XCODE_SYMBOL=""
+
+## SWIFT
+#SPACESHIP_SWIFT_PREFIX="swift:("
+#SPACESHIP_SWIFT_SUFFIX=") "
+#SPACESHIP_SWIFT_SYMBOL=""
+
+## GOLANG
+#SPACESHIP_GOLANG_PREFIX="go:("
+#SPACESHIP_GOLANG_SUFFIX=") "
+#SPACESHIP_GOLANG_SYMBOL=""
+
+## DOCKER
+#SPACESHIP_DOCKER_PREFIX="docker:("
+#SPACESHIP_DOCKER_SUFFIX=") "
+#SPACESHIP_DOCKER_SYMBOL=""
+
+## VENV
+#SPACESHIP_VENV_PREFIX="venv:("
+#SPACESHIP_VENV_SUFFIX=") "
+
+## PYENV
+#SPACESHIP_PYENV_PREFIX="python:("
+#SPACESHIP_PYENV_SUFFIX=") "
+#SPACESHIP_PYENV_SYMBOL=""
+#ZSH_THEME="spaceship"
+#SPACESHIP_PROMPT_ADD_NEWLINE=”true”
+#SPACESHIP_CHAR_SYMBOL=”\ue77d"
+#SPACESHIP_CHAR_PREFIX=”\uf13d"
+#SPACESHIP_CHAR_SUFFIX=(“ “)
+#SPACESHIP_CHAR_COLOR_SUCCESS=”yellow”
+#SPACESHIP_PROMPT_DEFAULT_PREFIX=”$USER”
+#SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=”true”
+#SPACESHIP_USER_SHOW=”true”
+
+#e77d
+#f13d
+
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -62,9 +164,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,6 +196,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+bindkey -v
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -103,3 +205,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias config='/usr/bin/git --git-dir=/Users/jonathanpalacio/.cfg/ --work-tree=/Users/jonathanpalacio'
+alias ls=colorls —-sd
+
+autoload -U promptinit; promptinit
+prompt spaceship

@@ -13,7 +13,7 @@ Plug 'mattn/emmet-vim'
 "Plug 'scrooloose/syntastic'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ervandew/supertab'
-Plug 'valloric/youcompleteme', { 'do': './install.py --ts-completer' }
+Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --ts-completer' }
 "Plug 'pangloss/vim-javascript'
 Plug 'sirver/ultisnips'
 "Plug 'isruslan/vim-es6'
@@ -66,6 +66,18 @@ map <leader>r :Ranger<CR>
 "set termguicolors
 filetype plugin indent on
 filetype on
+filetype plugin on
+"set omnifunc=syntaxcomplete#Complete
+""set completeopt=longest,menuone
+""makes enter key select highlighted text like <C-y>
+":inoremap <expr> <CR> pumvisible() ? '\<C-y>' : "\<C-g>u\<CR>"
+""Make <C-N> work as usual when menu appears simulate down key
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  "\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+""simulates c-x c-o then simulates c-n c-p and then down
+"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" omni completion <C-X><C-O> open pop up <C-N> forward <C-P> back
 "set paste toggle
 set pastetoggle=<Leader><Leader>p
 
@@ -91,7 +103,7 @@ syntax on
 "color dracula
 let g:javascript_plugin_jsdoc = 1
 set clipboard=unnamed
-set pastetoggle=<F2>
+"set pastetoggle=<F2>
 set mouse=a
 set t_Co=256
 let g:dracula_italic = 0
@@ -146,6 +158,17 @@ inoremap jk <esc>
 "emmet leader key
 let g:user_emmet_leader_key=','
 
+" fugitive mappings
+" :Gdiff
+nnoremap <leader>gd : Gdiff<CR>
+" :diffget //2 file visually on the left
+nnoremap gd2 :diffget //2<CR>
+" :diffget //3 file visually on the right
+nnoremap gd3 :diffget //3<CR>
+" :diffupdate -- fix spacing after change
+nnoremap gdu :diffupdate<CR>
+
+
 set showmatch
 
 set wildmenu
@@ -154,8 +177,6 @@ set wildmode=longest:full,full
 "set cursorline
 
 set number
-
-"set tabstop=2
 
 set incsearch
 
@@ -313,6 +334,7 @@ let g:ale_fix_on_save = 1
 "let g:ale_fix_on_save = 0
 "leader key for prettier and ale
 nmap <leader>d <Plug>(ale_fix)
+set completeopt+=noinsert
 
 " config add file
 " config status
@@ -353,7 +375,7 @@ set ttyfast " faster redrawing
 set diffopt+=vertical
 set laststatus=2 " show the satus line all the time
 set so=7 " set 7 lines to the cursors - when moving vertical
-"set wildmenu " enhanced command line completion
+set wildmenu " enhanced command line completion
 "set hidden " current buffer can be put into background
 set showcmd " show incomplete commands
 ""set noshowmode " don't show which mode disabled for PowerLine
@@ -365,13 +387,19 @@ set showmatch " show matching braces
 
 "" Tab control
 
-set noexpandtab " insert tabs rather than spaces for <Tab>
+set expandtab " insert tabs rather than spaces for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=2 " the visible width of tabs
 set softtabstop=2 " edit as if the tabs are 4 characters wide
 set shiftwidth=2 " number of spaces to use for indent and unindent
+set autoindent
+set smartindent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
+"set cindent
+"autocmd VimEnter * set autoindent
 "set shiftround " round indent to a multiple of 'shiftwidth'
-
 
 "" code folding settings
 set foldmethod=syntax " fold based on indent
@@ -423,3 +451,22 @@ set nocompatible
 " highlighting and reverts colors back to how they should be
 nnoremap <C-h> :syntax on <cr>
 nnoremap <C-v> :source ~/.vimrc <cr>
+
+set splitbelow
+set splitright
+""Max out the height of the current split
+"ctrl + w _
+
+""Max out the width of the current split
+"ctrl + w |
+
+""Normalize all split sizes, which is very handy when resizing terminal
+"ctrl + w =
+""Swap top/bottom or left/right split
+"Ctrl+W R
+
+""Break out current window into a new tabview
+"Ctrl+W T
+
+""Close every window in the current tabview but the current one
+"Ctrl+W o

@@ -19,7 +19,7 @@ Plug 'sirver/ultisnips'
 "Plug 'isruslan/vim-es6'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
@@ -27,7 +27,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'honza/vim-snippets'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
-Plug 'othree/html5.vim', { 'for': 'html'  }
+"Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
@@ -49,6 +49,7 @@ let g:mta_filetypes = {
 			\}
 Plug 'pablopunk/dynamic-file-completion.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'styled-components/vim-styled-components'
 call plug#end()
 "map Ranger File Tree
 let g:ranger_map_keys = 0
@@ -326,7 +327,7 @@ let g:javascript_plugin_flow = 1
 " In ~/.vim/vimrc, or somewhere similar.
 let g:ale_fixers = {
  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
- \   'javascript': ['eslint'],
+ \   'javascript': ['eslint', 'prettier'],
  \}
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
@@ -432,12 +433,12 @@ let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
 let g:ale_completion_enabled = 1
 
 
-"let g:ale_fixers = {}
+let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['css'] = ['prettier']
 let g:ale_javascript_prettier_use_local_config = 1
-"let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
 "syntax enable
 " make the highlighting of tabs and other non-text less annoying

@@ -24,9 +24,9 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'honza/vim-snippets'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
+"Plug 'honza/vim-snippets'
+"Plug 'epilande/vim-es2015-snippets'
+"Plug 'epilande/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
 Plug 'moll/vim-node', { 'for': 'javascript' }
@@ -50,6 +50,7 @@ let g:mta_filetypes = {
 Plug 'pablopunk/dynamic-file-completion.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'styled-components/vim-styled-components'
+Plug 'tpope/vim-abolish'
 call plug#end()
 "map Ranger File Tree
 let g:ranger_map_keys = 0
@@ -78,7 +79,7 @@ filetype plugin on
 ""simulates c-x c-o then simulates c-n c-p and then down
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-" omni completion <C-X><C-O> open pop up <C-N> forward <C-P> back
+ "omni completion <C-X><C-O> open pop up <C-N> forward <C-P> back
 "set paste toggle
 set pastetoggle=<Leader><Leader>p
 
@@ -471,3 +472,17 @@ set splitright
 
 ""Close every window in the current tabview but the current one
 "Ctrl+W o
+"ABOLISH EXAMPLES
+
+":%Subvert/facilit{y,ies}/building{,s}/g
+":Subvert/address{,es}/reference{,s}/g
+":Subvert/blog{,s}/post{,s}/g
+":Subvert/child{,ren}/adult{,s}/g
+"snake_case crs
+"mixedCase crm
+"camelCase crs
+"upper_case cru
+"dash-case cr-
+"dot.case cr.
+"space-case: cr<space>
+"Title Case crt

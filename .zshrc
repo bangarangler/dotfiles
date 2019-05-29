@@ -164,8 +164,9 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git z zsh-syntax-highlighting)
 
+#~/z.sh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -203,9 +204,22 @@ bindkey -v
  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export ANDROID_HOME=/Users/jonathanpalacio/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+#export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH=$PATH:/Users/jonathanpalacio/Library/Android/sdk/platform-tools/
+
 
 alias config='/usr/bin/git --git-dir=/Users/jonathanpalacio/.cfg/ --work-tree=/Users/jonathanpalacio'
 alias ls=colorls —-sd
+
+#PYTHON
+#alias 2='python2'
+#alias 3='python3'
+alias python='python3'
 
 autoload -U promptinit; promptinit
 prompt spaceship

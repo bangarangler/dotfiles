@@ -51,6 +51,10 @@ Plug 'pablopunk/dynamic-file-completion.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'styled-components/vim-styled-components'
 Plug 'tpope/vim-abolish'
+Plug 'jparise/vim-graphql'
+Plug 'tmhedberg/simpylfold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
 call plug#end()
 "map Ranger File Tree
 let g:ranger_map_keys = 0
@@ -89,7 +93,7 @@ nnoremap <C-k> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '>-2<CR>gv=gv
+vnoremap <C-k> :m '>-1<CR>gv=gv
 
 "ma - mark a `a to return, mb = mark b `b to return
 ":'a,'bs/C/S/c  changes all c's above to S
@@ -354,8 +358,8 @@ set completeopt+=noinsert
 set ignorecase " case insensitive searching
 set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch " highlight search results
-"clear results after search
-nnoremap <silent> <C-L> :noh<CR><C-L>
+"clear results after search space ctrl l
+nnoremap <C-L> :noh<CR><C-L>
 set incsearch " set incremental search, like modern browsers
 set nolazyredraw " don't redraw while executing macros
 
@@ -404,11 +408,13 @@ autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
 "set shiftround " round indent to a multiple of 'shiftwidth'
 
 "" code folding settings
-set foldmethod=syntax " fold based on indent
+set foldmethod=indent " fold based on indent
 set foldlevelstart=99
 set foldnestmax=10 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
+
+nnoremap <space> za
 
 "  shortcut to save
  nmap <leader>w :w<cr>
@@ -456,6 +462,40 @@ nnoremap <C-v> :source ~/.vimrc <cr>
 
 set splitbelow
 set splitright
+
+"split navigations Ctrl [J K L H]
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+
+" PEP 8 indentation here
+"au BufNewFile,BufRead *.py
+    "\ set tabstop=4
+    "\ set softtabstop=4
+    "\ set shiftwidth=4
+    "\ set textwidth=79
+    "\ set expandtab
+    "\ set autoindent
+    "\ set fileformat=unix
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=79
+"autocmd FileType puthon setlocal expandtab autoindent fileformat=unix
+"Flag unnecessary WhiteSpace
+"au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" UTF-8 Support
+set encoding=utf-8
+
+"python with virtualenv support
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+  "project_base_dir = os.environ['VIRTUAL_ENV']
+  "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  "execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
 ""Max out the height of the current split
 "ctrl + w _
 

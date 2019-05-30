@@ -19,7 +19,7 @@ Plug 'sirver/ultisnips'
 "Plug 'isruslan/vim-es6'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
@@ -267,7 +267,8 @@ let g:ycm_key_list_previous_completion=[]
 "auto clear white space on save
 autocmd BufWritePre * StripWhitespace
 
-"<Leader>ig toggles indent guides
+"<Leader>ig "toggles indent guides
+nnoremap <leader>ig :IndentGuidesToggle<CR>
 
 " default vim ctrl a will increment and ctrl x will decrement
 

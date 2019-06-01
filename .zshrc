@@ -216,6 +216,14 @@ export PATH=$PATH:/Users/jonathanpalacio/Library/Android/sdk/platform-tools/
 alias config='/usr/bin/git --git-dir=/Users/jonathanpalacio/.cfg/ --work-tree=/Users/jonathanpalacio'
 alias ls=colorls —-sd
 
+alias skeleton='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/skull.txt'
+alias casper='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/casper-evil.txt'
+alias succubus='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/succubus.txt'
+alias warlock='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/warlock.txt'
+alias taz='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/taz.txt'
+alias unicorn='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/unicorn.txt'
+alias devil='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/devil-made-me.txt'
+
 #PYTHON
 #alias 2='python2'
 #alias 3='python3'

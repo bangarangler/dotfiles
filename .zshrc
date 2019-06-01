@@ -221,5 +221,10 @@ alias ls=colorls —-sd
 #alias 3='python3'
 alias python='python3'
 
+date | lolcat
+lolcat /Users/jonathanpalacio/Desktop/dev/ascii/skull.txt
+figlet -f whimsy Dain! | lolcat
+cal | lolcat
+
 autoload -U promptinit; promptinit
 prompt spaceship

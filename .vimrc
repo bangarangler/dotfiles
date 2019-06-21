@@ -487,6 +487,9 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=
 " UTF-8 Support
 set encoding=utf-8
 
+" C ********
+map <F8> :!gcc % -Wall -Wextra -o %< && ./%< <CR>
+
 "python with virtualenv support
 "py << EOF
 "import os

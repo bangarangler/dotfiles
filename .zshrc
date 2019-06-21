@@ -232,7 +232,11 @@ alias python='python3'
 date | lolcat
 lolcat /Users/jonathanpalacio/Desktop/dev/ascii/skull.txt
 figlet -f whimsy Dain! | lolcat
-cal | lolcat
+#cal | lolcat
+export BAT_THEME=GitHub
+
+alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+
 
 autoload -U promptinit; promptinit
 prompt spaceship

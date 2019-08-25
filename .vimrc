@@ -24,9 +24,9 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-"Plug 'honza/vim-snippets'
-"Plug 'epilande/vim-es2015-snippets'
-"Plug 'epilande/vim-react-snippets'
+Plug 'honza/vim-snippets'
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
 Plug 'moll/vim-node', { 'for': 'javascript' }
@@ -44,6 +44,7 @@ Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'valloric/matchtagalways'
+Plug 'joonty/vdebug'
 let g:mta_filetypes = {
 			\ 'javascript.jsx' : 1,
 			\}
@@ -55,6 +56,7 @@ Plug 'jparise/vim-graphql'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
+"Plug 'vim-scripts/Conque-GDB'
 call plug#end()
 "map Ranger File Tree
 let g:ranger_map_keys = 0

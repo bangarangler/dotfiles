@@ -223,6 +223,15 @@ alias warlock='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/warlock.txt'
 alias taz='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/taz.txt'
 alias unicorn='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/unicorn.txt'
 alias devil='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/devil-made-me.txt'
+alias charizard='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/charizard.txt'
+alias blastoise='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/blastoise.txt'
+alias ninetails='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/ninetails.txt'
+alias arcanine='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/arcanine.txt'
+alias gengar='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/gengar.txt'
+alias gyarados='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/gyarados.txt'
+alias eevee='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/eevee.txt'
+alias dragonite='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/dragonite.txt'
+alias lady='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/lady.txt'
 
 #PYTHON
 #alias 2='python2'
@@ -236,7 +245,12 @@ figlet -f whimsy Dain! | lolcat
 export BAT_THEME=GitHub
 
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+#POSTGRES
+alias pg_start="pg_ctl -D /usr/local/var/postgres start"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
 
 
 autoload -U promptinit; promptinit
 prompt spaceship
+
+

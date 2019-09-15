@@ -211,6 +211,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 #export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:/Users/jonathanpalacio/Library/Android/sdk/platform-tools/
+export PATH="/usr/local/bin:$PATH"
 
 
 alias config='/usr/bin/git --git-dir=/Users/jonathanpalacio/.cfg/ --work-tree=/Users/jonathanpalacio'
@@ -248,6 +249,8 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 #POSTGRES
 alias pg_start="pg_ctl -D /usr/local/var/postgres start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
+
+alias ctags="`brew --prefix`/bin/ctags"
 
 
 autoload -U promptinit; promptinit

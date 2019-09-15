@@ -56,6 +56,7 @@ Plug 'jparise/vim-graphql'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
+Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB'
 call plug#end()
 "map Ranger File Tree
@@ -88,6 +89,10 @@ filetype plugin on
  "omni completion <C-X><C-O> open pop up <C-N> forward <C-P> back
 "set paste toggle
 set pastetoggle=<Leader><Leader>p
+
+" VISUALLY SELECT AND "p y OR ANY LETTER OR NUMBER YANKS TO SPECIFIC REGISTER
+" TO PASTE IT PRESS "p p
+" :reg TO CHECK OUT PRINT REGISTER
 
 " move lines up or dowwn
 nnoremap <C-j> :m .+1<CR>==
@@ -141,9 +146,12 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 let g:fzf_buffers_jump = 1
+let g:fzf_tags_command = 'ctags -R'
 nmap <Leader>b :buffers<CR>
 nmap <Leader>n :files<CR>
 nmap <Leader>m :bufdo! bw<CR>
+
+set tags=tags
 
 
 
@@ -197,7 +205,7 @@ map <C-n> :NERDTreeToggle<CR>
 " ALE Config.  more below
 " Enable completion where available.
  " This setting must be set before ALE is loaded.
- let g:ale_completion_enabled = 1"
+ let g:ale_completion_enabled = 1
  set wildmode=longest:full,full
 
 
@@ -440,7 +448,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_echo_msg_error_str = '✖'
 let g:ale_echo_msg_warning_str = '⚠'
 let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 
 
 let g:ale_fixers = {}
@@ -492,43 +500,3 @@ set encoding=utf-8
 " C ********
 map <F8> :!gcc % -Wall -Wextra -o %< && ./%< <CR>
 
-"python with virtualenv support
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-  "project_base_dir = os.environ['VIRTUAL_ENV']
-  "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  "execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-""Max out the height of the current split
-"ctrl + w _
-
-""Max out the width of the current split
-"ctrl + w |
-
-""Normalize all split sizes, which is very handy when resizing terminal
-"ctrl + w =
-""Swap top/bottom or left/right split
-"Ctrl+W R
-
-""Break out current window into a new tabview
-"Ctrl+W T
-
-""Close every window in the current tabview but the current one
-"Ctrl+W o
-"ABOLISH EXAMPLES
-
-":%Subvert/facilit{y,ies}/building{,s}/g
-":Subvert/address{,es}/reference{,s}/g
-":Subvert/blog{,s}/post{,s}/g
-":Subvert/child{,ren}/adult{,s}/g
-"snake_case crs
-"mixedCase crm
-"camelCase crs
-"upper_case cru
-"dash-case cr-
-"dot.case cr.
-"space-case: cr<space>
-"Title Case crt

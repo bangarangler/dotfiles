@@ -108,7 +108,7 @@ SPACESHIP_DIR_TRUNC='1' # show only last directory
 #e77d
 #f13d
 
-source $(dirname $(gem which colorls))/tab_complete.sh
+#source $(dirname $(gem which colorls))/tab_complete.sh
 
 
 
@@ -239,9 +239,9 @@ alias lady='lolcat /Users/jonathanpalacio/Desktop/dev/ascii/lady.txt'
 #alias 3='python3'
 alias python='python3'
 
-date | lolcat
-lolcat /Users/jonathanpalacio/Desktop/dev/ascii/skull.txt
-figlet -f whimsy Dain! | lolcat
+#date | lolcat
+#lolcat /Users/jonathanpalacio/Desktop/dev/ascii/skull.txt
+#figlet -f whimsy Dain! | lolcat
 #cal | lolcat
 export BAT_THEME=GitHub
 
@@ -251,6 +251,16 @@ alias pg_start="pg_ctl -D /usr/local/var/postgres start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
 
 alias ctags="`brew --prefix`/bin/ctags"
+
+alias yabaistart='brew services start koekeishiya/formulae/yabai && brew services start skhd'
+
+alias yabaistop='brew services stop koekeishiya/formulae/yabai && brew services stop skhd'
+
+alias iconsoff='defaults write com.apple.finder CreateDesktop -bool false;killall Finder;say icons hidden'
+
+alias iconson='defaults write com.apple.finder CreateDesktop -bool true;killall Finder;say icons visible'
+
+eval "$(rbenv init -)"
 
 
 autoload -U promptinit; promptinit

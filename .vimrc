@@ -185,7 +185,7 @@ let g:user_emmet_leader_key=','
 
 " fugitive mappings
 " :Gdiff
-nnoremap <leader>gd : Gdiff<CR>
+nnoremap <leader>gd : Gdiffsplit!<CR>
 " :diffget //2 file visually on the left
 nnoremap gd2 :diffget //2<CR>
 " :diffget //3 file visually on the right

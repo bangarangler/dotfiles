@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'kabbamine/vcoolor.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'easymotion/vim-easymotion'
@@ -21,7 +22,7 @@ Plug 'sirver/ultisnips'
 "Plug 'isruslan/vim-es6'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
@@ -35,30 +36,30 @@ Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
 let g:jsx_ext_required = 0
 "Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+"Plug 'groenewege/vim-less', { 'for': 'less' }
+"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
-Plug 'stephenway/postcss.vim', { 'for': 'css' }
-Plug 'elzr/vim-json', { 'for': 'json'  }
-let g:vim_json_syntax_conceal = 0
+"Plug 'stephenway/postcss.vim', { 'for': 'css' }
+"Plug 'elzr/vim-json', { 'for': 'json'  }
+"let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'valloric/matchtagalways'
-Plug 'joonty/vdebug'
-let g:mta_filetypes = {
-			\ 'javascript.jsx' : 1,
-			\}
+"Plug 'joonty/vdebug'
+"let g:mta_filetypes = {
+			"\ 'javascript.jsx' : 1,
+			"\}
 Plug 'pablopunk/dynamic-file-completion.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'styled-components/vim-styled-components'
 Plug 'tpope/vim-abolish'
-Plug 'jparise/vim-graphql'
+"Plug 'jparise/vim-graphql'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB'
 call plug#end()
 
@@ -201,7 +202,17 @@ set wildmode=longest:full,full
 
 "set cursorline
 
-set number
+" set number
+
+function! LineNumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <leader>nt :call LineNumberToggle()<cr>
 
 set incsearch
 
@@ -631,3 +642,4 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+

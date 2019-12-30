@@ -177,11 +177,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='vim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -259,6 +259,10 @@ alias yabaistop='brew services stop koekeishiya/formulae/yabai && brew services 
 alias iconsoff='defaults write com.apple.finder CreateDesktop -bool false;killall Finder;say icons hidden'
 
 alias iconson='defaults write com.apple.finder CreateDesktop -bool true;killall Finder;say icons visible'
+
+alias workFE="tmuxinator workFE"
+
+alias workBE="tmuxinator workBE"
 
 eval "$(rbenv init -)"
 
